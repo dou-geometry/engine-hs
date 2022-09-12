@@ -1,22 +1,15 @@
 OutputDir = ./out
 PdfDir = ./docs
 GHC = ghc -dynamic -outputdir $(OutputDir) -no-keep-hi-files
-TEX = ptex2pdf -u -l -ot "-synctex=1 -interaction=nonstopmode -file-line-error-style -shell-escape"
-# -output-directory $(PdfDir)
+TEX = ptex2pdf -u -l -ot "-synctex=1 -interaction=nonstopmode -file-line-error-style -shell-escape -output-directory $(PdfDir)" -output-directory $(PdfDir)
 
 all: programs cleanTex
 programs: fundamental
 
-define compileTeX
-	cd $(PdfDir)
-	$(TEX) $(1)
-	cd -
-endef
-
 define compileLHS
 	$(GHC)             $(1).lhs
-	$(call compileTeX, $(1).lhs)
-	$(call compileTeX, $(1).lhs)
+	$(TEX) $(1)
+	$(TEX) $(1)
 endef
 
 fundamental: prepDir
