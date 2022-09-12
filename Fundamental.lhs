@@ -54,11 +54,40 @@ unreachable = P.error "Reached a supposed unreachable branch, possibly due to ha
 \chapter{Axiom}
 
 
+% (れレ)^0 behaves the same as (れレ)^1, just that (れレ)^0 can't be viewed (wouldn't interact with light/other things).
+% Something like an isolated container?
+% As though we try to replicate behaviours by physical action, you can't really draw lines to record things right
+
+\chapter{Structure}
+
+\begin{code}
+data JH = JH -- 情報
+\end{code}
+
+\begin{code}
+data MN = MN -- もの
+\end{code}
+
+\chapter{Observation Methods}
+
+\section{Timing Trips}
+
+\begin{code}
+timeTrip :: MN -> MN -> JH
+timeTrip = notImplemented
+\end{code}
+
+
+
 
 \newpage
 \appendix
 
 \chapter{Appendix}
+
+\chapter{Licensing}
+
+\verbatiminput{LICENSE.txt}
 
 
 \end{document}
